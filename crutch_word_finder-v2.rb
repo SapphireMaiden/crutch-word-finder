@@ -8,7 +8,7 @@ excluded_words = [
 # Insert route and name of your file between the quotes below. Remember to search and delete all quotes (single, double, plain and smart) from it first, and paste it as HTML.
 text = File.read("words_to_find.md")
 
-clean_text = text.to_s.gsub(/[^a-zA-ZÀ-ÖØ-öø-ÿ]/, ' ').delete(',').gsub(/\b[a-zA-Z]\b/, ' ').downcase.split #removes special characters, punctuaction, spaces, and downcases the word to prepare it for processing
+clean_text = text.to_s.gsub(/[^a-zA-ZÀ-ÖØ-öø-ÿ]/, ' ').delete(',').gsub(/\b[a-zA-Z]\b/, ' ').downcase.split # removes special characters, punctuaction, single letters, spaces, and downcases the word to prepare it for the next step
 
 # Find crutch words ----------------------------------------------------------------
 words = clean_text.each_with_object(Hash.new(0)) do |word, count| #processes and splits the text into individual words, creates a list of words
